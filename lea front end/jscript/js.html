@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+<form id="myform">
+	<center>
+		<h2><b><i>fill the following form</i></b></h2>
+	<input type="text" name="name" placeholder="name here"><br>
+	<input type="email" name="email" placeholder="email here"><br>
+	<input type="age" name="age" placeholder="age here"><br>
+	<button type="submit" name="submit" placeholder="submit">submit
+	</button>
+</form>
+<script type="text/javascript">
+	document.getElementById("myform").addEventListener("submit", function(event){
+		const inputs=
+		this.queryselectorAll('input[type="text"][required]');
+		for(let input of inputs){
+			if(input.value.trim()===""){
+				alert("please fill out all required fields.");
+				event.preventDefault();
+			}
+		}
+	});
+</script>
+</body>
+</html>
